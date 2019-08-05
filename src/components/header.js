@@ -1,42 +1,47 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import React from 'react'
+import styled from 'styled-components';
+import MobileNavigationBar from '../components/header/mobile'
+import DesktopNavigationBar from '../components/header/desktop'
+import * as variable from 'src/styles/variables'
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+class Header extends React.Component {
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+  componentDidMount () {
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
+  }
+
+  render () {
+    return (
+  <Container>
+    <Container2>
+
+      <DesktopNavigationBar/>
+      <MobileNavigationBar/>
+
+    </Container2>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  </Container>
+)}}
 
 export default Header
+
+const Container = styled.div`
+  display: block;
+  width: 100%;
+  /*new*/
+  z-index: 100;
+  /*end-new*/
+  @media ${variable.MidPoint} {
+  }
+`
+
+const Container2 = styled.div`
+  width: 100%;
+  z-index: 100;
+  max-width: 100%;
+  transition: .2s linear background-color, .2s linear box-shadow;
+  @media ${variable.MidPoint}  {
+      height: unset;
+      box-shadow: unset;
+  }
+`
